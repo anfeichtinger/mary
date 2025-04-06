@@ -44,18 +44,6 @@ class IconGroup extends Component
         return $this->uuid . data_get($option, $this->optionValue);
     }
 
-    public function prevOptionValue(int $index): ?string
-    {
-        $index--;
-        return $index >= 0 ? $this->options[$index][$this->optionValue] : $this->options[count($this->options) - 1][$this->optionValue];
-    }
-
-    public function nextOptionValue(int $index): ?string
-    {
-        $index++;
-        return $index < count($this->options) ? $this->options[$index][$this->optionValue] : $this->options[0][$this->optionValue];
-    }
-
     public function render(): View|Closure|string
     {
         return <<<'BLADE'
